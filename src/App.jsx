@@ -1,16 +1,11 @@
-import AlertButton from "./AlertButton.jsx";
+import WelcomeMessage from "./WelcomeMessage.jsx";
 
 function App() {
-    const name = 'Мир',
-          year = 2026;
-
     return (
         <>
-            <h1>Hello, {name}!</h1>
-            <p>текущий год: {year}</p>
-            <AlertButton />
-            <AlertButton />
-            <AlertButton />
+            <WelcomeMessage name='Анна' age={25} />
+            <WelcomeMessage name='Иван' age={30} />
+            <WelcomeMessage name='Дима' age={15} />
         </>
     );
 }
