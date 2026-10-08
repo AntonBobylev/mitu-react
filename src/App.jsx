@@ -1,11 +1,15 @@
-import WelcomeMessage from "./WelcomeMessage.jsx";
+import UserCard from "./UserCard.jsx";
 
 function App() {
+    const handleClick = (name) => {
+        alert(`Вы нажали на кнопку ${name}`);
+    };
+
     return (
         <>
-            <WelcomeMessage name='Анна' age={25} />
-            <WelcomeMessage name='Иван' age={30} />
-            <WelcomeMessage name='Дима' age={15} />
+            <UserCard name='Мария' onButtonClick={handleClick} />
+            <UserCard name='Дима' onButtonClick={handleClick} />
+            <UserCard name='Иван' onButtonClick={handleClick} />
         </>
     );
 }
