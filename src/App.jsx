@@ -1,21 +1,33 @@
 import {useState} from "react";
 
 function App() {
-    const [count, setCount] = useState(0);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('Email', email);
+        console.log('Password', password);
+    }
 
     return (
-        <>
-            <h2>{count}</h2>
-            <button onClick={() => setCount(count + 1)}>
-                count + 1
-            </button>
-            <button onClick={() => setCount(count - 1)}>
-                count - 1
-            </button>
-            <button onClick={() => setCount(0)}>
-                count = 0
-            </button>
-        </>
+        <form onSubmit={handleSubmit}>
+            <div>
+                <input type="email"
+                       placeholder='Email'
+                       value={email}
+                       onChange={(event) => setEmail(event.target.value)}
+                />
+            </div>
+            <div>
+                <input type="password"
+                       placeholder='Password'
+                       value={password}
+                       onChange={(event) => setPassword(event.target.value)}
+                />
+            </div>
+            <button type="submit">Войти</button>
+        </form>
     );
 }
 
